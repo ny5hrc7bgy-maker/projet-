@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nos machines – Atelier</title>
+<meta name="description" content="Présentation des systèmes automatisés de l'atelier : Palettiseur MP 300 et Ecolpap 2.">
+<style>
+  :root{
+    --bg:#f4f6f8; --card:#ffffff; --text:#1c2430; --muted:#5b6675;
+    --accent:#c8202f; --accent2:#1f5fa8; --line:#e2e6eb; --chip:#eef2f7;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#11151b; --card:#1a2029; --text:#e8edf3; --muted:#9aa6b5;
+      --accent:#ff5a66; --accent2:#6aa8ff; --line:#2a323d; --chip:#232b36; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.6}
+  img{max-width:100%;display:block}
+  header{background:linear-gradient(135deg,#1c2430,#2c3a4d);color:#fff;padding:56px 16px 48px;text-align:center}
+  header h1{margin:0 0 8px;font-size:clamp(1.8rem,5vw,2.8rem)}
+  header p{margin:0 auto;max-width:640px;color:#c9d3df}
+  nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);
+    display:flex;justify-content:center;gap:8px;padding:10px 16px;flex-wrap:wrap}
+  nav a{color:var(--text);text-decoration:none;font-weight:600;padding:6px 14px;border-radius:999px;background:var(--chip)}
+  nav a:hover{background:var(--accent);color:#fff}
+  main{max-width:1100px;margin:0 auto;padding:32px 16px 48px}
+  .machine{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:24px;margin-bottom:32px;scroll-margin-top:70px}
+  .tag{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    color:#fff;background:var(--accent);padding:3px 10px;border-radius:6px}
+  .tag.blue{background:var(--accent2)}
+  .machine h2{margin:10px 0 4px;font-size:clamp(1.5rem,4vw,2.1rem)}
+  .sub{color:var(--muted);margin:0 0 20px}
+  .grid{display:grid;grid-template-columns:1fr;gap:24px}
+  @media (min-width:860px){ .grid{grid-template-columns:1.1fr 1fr} }
+  .grid{align-items:start}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;align-content:start}
+  @media (min-width:860px){ .gallery{position:sticky;top:70px} }
+  .gallery button{padding:0;border:0;background:none;cursor:zoom-in;border-radius:10px;overflow:hidden}
+  .gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .25s}
+  .gallery button:hover img{transform:scale(1.04)}
+  .gallery button:first-child{grid-column:1/-1}
+  .gallery button:first-child img{aspect-ratio:4/3}
+  h3{margin:20px 0 8px;font-size:1.1rem}
+  h3:first-child{margin-top:0}
+  ol.steps{padding-left:0;list-style:none;counter-reset:s;margin:0}
+  ol.steps li{counter-increment:s;position:relative;padding:0 0 12px 40px}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;
+    background:var(--accent2);color:#fff;font-weight:700;display:grid;place-items:center;font-size:.9rem}
+  table{width:100%;border-collapse:collapse;font-size:.95rem}
+  td{padding:8px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+  td:first-child{color:var(--muted);width:42%}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+  .chips li{background:var(--chip);padding:4px 10px;border-radius:999px;font-size:.88rem}
+  .safety{border-left:4px solid var(--accent);background:var(--chip);padding:12px 14px;border-radius:8px;margin-top:16px;font-size:.95rem}
+  footer{text-align:center;color:var(--muted);padding:24px 16px 40px;font-size:.9rem}
+  #lb{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:20;padding:16px;cursor:zoom-out}
+  #lb.open{display:flex}
+  #lb img{max-height:92vh;border-radius:8px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Nos machines</h1>
+  <p>Deux systèmes automatisés de l'atelier : un palettiseur et une ligne de recyclage du papier.</p>
+</header>
+
+<nav>
+  <a href="#palettiseur">Palettiseur MP 300</a>
+  <a href="#ecolpap">Ecolpap 2</a>
+</nav>
+
+<main>
+
+  <!-- ============ PALETTISEUR ============ -->
+  <section class="machine" id="palettiseur">
+    <span class="tag">SY129</span>
+    <h2>Palettiseur MP 300</h2>
+    <p class="sub">Système automatisé Didatec Technologie : mise en couches de produits sur palette</p>
+
+    <div class="grid">
+      <div class="gallery">
+        <button data-full="img/palettiseur-pupitre.jpg"><img src="img/palettiseur-pupitre.jpg" alt="Pupitre de commande et poste informatique du palettiseur MP 300" loading="lazy"></button>
+        <button data-full="img/palettiseur-interieur.jpg"><img src="img/palettiseur-interieur.jpg" alt="Intérieur du palettiseur : tapis d'amenée et zone de préhension" loading="lazy"></button>
+        <button data-full="img/palettiseur-convoyeur.jpg"><img src="img/palettiseur-convoyeur.jpg" alt="Convoyeurs à rouleaux des palettes" loading="lazy"></button>
+      </div>
+
+      <div>
+        <h3>À quoi sert-il ?</h3>
+        <p>Le palettiseur range automatiquement des produits sur une palette, couche après couche,
+          comme en fin de ligne de production avant l'expédition.</p>
+
+        <h3>Fonctionnement</h3>
+        <ol class="steps">
+          <li><strong>Amenée</strong> : un tapis convoyeur motorisé apporte les produits jusqu'à la zone de préhension.</li>
+          <li><strong>Mise en couche</strong> : les produits sont regroupés puis transférés sur la palette par des actionneurs pneumatiques.</li>
+          <li><strong>Descente</strong> : la palette descend d'un niveau pour accueillir la couche suivante.</li>
+          <li><strong>Évacuation</strong> : la palette pleine sort sur les convoyeurs à rouleaux et une palette vide la remplace.</li>
+        </ol>
+
+        <h3>Caractéristiques</h3>
+        <table>
+          <tr><td>Fabricant</td><td>Didatec Technologie</td></tr>
+          <tr><td>Repère</td><td>SY129 – MP 300</td></tr>
+          <tr><td>Commande</td><td>Automate programmable + terminal de dialogue</td></tr>
+          <tr><td>Modes</td><td>Automatique / Manuel, départ cycle, arrêt</td></tr>
+          <tr><td>Signalisation</td><td>Colonne lumineuse rouge / vert / orange</td></tr>
+          <tr><td>Supervision</td><td>Poste PC avec écran, clavier et souris</td></tr>
+        </table>
+
+        <h3>Technologies présentes</h3>
+        <ul class="chips">
+          <li>Automatisme</li><li>Pneumatique</li><li>Moto-réducteur</li><li>Convoyage</li><li>Capteurs</li><li>Supervision</li>
+        </ul>
+
+        <div class="safety">⚠️ <strong>Sécurité :</strong> l'installation est entièrement grillagée,
+          avec des portes équipées d'arrêts d'urgence et un sectionneur cadenassable pour la consignation.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ECOLPAP ============ -->
+  <section class="machine" id="ecolpap">
+    <span class="tag blue">SY16</span>
+    <h2>Ecolpap 2</h2>
+    <p class="sub">Ligne automatisée de recyclage du papier : broyage, compactage et emballage</p>
+
+    <div class="grid">
+      <div class="gallery">
+        <button data-full="img/ecolpap-tunnel.jpg"><img src="img/ecolpap-tunnel.jpg" alt="Vue d'ensemble de la ligne Ecolpap et de son tunnel" loading="lazy"></button>
+        <button data-full="img/ecolpap-broyeur.jpg"><img src="img/ecolpap-broyeur.jpg" alt="Broyeur de papier et colonne de compactage" loading="lazy"></button>
+        <button data-full="img/ecolpap-armoire.jpg"><img src="img/ecolpap-armoire.jpg" alt="Armoire électrique Ecolpap 2 avec écran tactile" loading="lazy"></button>
+      </div>
+
+      <div>
+        <h3>À quoi sert-elle ?</h3>
+        <p>Ecolpap transforme des feuilles de papier usagées en paquets compacts emballés,
+          prêts à partir au recyclage.</p>
+
+        <h3>Fonctionnement</h3>
+        <ol class="steps">
+          <li><strong>Broyage</strong> : les feuilles sont déchiquetées par un broyeur à couteaux rotatifs.</li>
+          <li><strong>Compactage</strong> : les morceaux tombent dans une colonne où un vérin les presse pour former un bloc.</li>
+          <li><strong>Transfert</strong> : un vérin pneumatique pousse le bloc vers le poste d'emballage.</li>
+          <li><strong>Emballage</strong> : le bloc est enveloppé de film plastique puis passe dans le tunnel pour être fermé.</li>
+        </ol>
+
+        <h3>Caractéristiques</h3>
+        <table>
+          <tr><td>Repère</td><td>SY16 – Ecolpap 2</td></tr>
+          <tr><td>Format papier</td><td>A4 maximum (210 × 297 mm)</td></tr>
+          <tr><td>Capacité</td><td>4 feuilles maximum par cycle</td></tr>
+          <tr><td>Grammage</td><td>60 à 100 g/m²</td></tr>
+          <tr><td>Commande</td><td>Automate + écran tactile Schneider Electric Harmony</td></tr>
+          <tr><td>Énergies</td><td>Électrique, pneumatique et hydraulique (centrale Atos)</td></tr>
+          <tr><td>Voyants</td><td>Sous tension, en service, attente, défaut</td></tr>
+        </table>
+
+        <h3>Technologies présentes</h3>
+        <ul class="chips">
+          <li>Automatisme</li><li>Hydraulique</li><li>Pneumatique</li><li>Moteur électrique</li><li>IHM tactile</li><li>Capteurs</li>
+        </ul>
+
+        <div class="safety">⚠️ <strong>Consignes :</strong> une seule série de feuilles par cycle,
+          attendre l'éjection avant d'en remettre. Trombones et agrafes interdits. En cas de bourrage,
+          débloquer avec l'interrupteur en façade.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>Présentation des machines de l'atelier</footer>
+
+<div id="lb" role="dialog" aria-label="Photo agrandie"><img alt=""></div>
+<script>
+  const lb=document.getElementById('lb'), lbImg=lb.querySelector('img');
+  document.querySelectorAll('.gallery button').forEach(b=>b.addEventListener('click',()=>{
+    lbImg.src=b.dataset.full; lbImg.alt=b.querySelector('img').alt; lb.classList.add('open');
+  }));
+  lb.addEventListener('click',()=>lb.classList.remove('open'));
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') lb.classList.remove('open'); });
+</script>
+</body>
+</html>

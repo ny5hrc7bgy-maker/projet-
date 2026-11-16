@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nos machines – Atelier</title>
-<meta name="description" content="Présentation des systèmes automatisés de l'atelier : Palettiseur MP 300 et Ecolpap 2.">
+<meta name="description" content="Présentation des systèmes automatisés de l'atelier : Palettiseur MP 300, Ecolpap 2 et Mainelec 1.">
 <style>
   :root{
     --bg:#f4f6f8; --card:#ffffff; --text:#1c2430; --muted:#5b6675;
@@ -28,10 +28,11 @@
   nav a:hover{background:var(--accent);color:#fff}
   main{max-width:1100px;margin:0 auto;padding:32px 16px 48px}
   .machine{background:var(--card);border:1px solid var(--line);border-radius:16px;
-    padding:24px;margin-bottom:32px;scroll-margin-top:70px}
+    padding:24px;margin-bottom:32px;scroll-margin-top:110px}
   .tag{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
     color:#fff;background:var(--accent);padding:3px 10px;border-radius:6px}
   .tag.blue{background:var(--accent2)}
+  .tag.green{background:#178a6a}
   .machine h2{margin:10px 0 4px;font-size:clamp(1.5rem,4vw,2.1rem)}
   .sub{color:var(--muted);margin:0 0 20px}
   .grid{display:grid;grid-template-columns:1fr;gap:24px}
@@ -44,6 +45,9 @@
   .gallery button:hover img{transform:scale(1.04)}
   .gallery button:first-child{grid-column:1/-1}
   .gallery button:first-child img{aspect-ratio:4/3}
+  .gallery.two{grid-template-columns:1fr 1fr}
+  .gallery.two button:first-child{grid-column:auto}
+  .gallery.two button:first-child img{aspect-ratio:3/4}
   h3{margin:20px 0 8px;font-size:1.1rem}
   h3:first-child{margin-top:0}
   ol.steps{padding-left:0;list-style:none;counter-reset:s;margin:0}
@@ -66,12 +70,13 @@
 
 <header>
   <h1>Nos machines</h1>
-  <p>Deux systèmes automatisés de l'atelier : un palettiseur et une ligne de recyclage du papier.</p>
+  <p>Trois systèmes automatisés de l'atelier : un palettiseur, une ligne de recyclage du papier et un banc de commande moteur.</p>
 </header>
 
 <nav>
   <a href="#palettiseur">Palettiseur MP 300</a>
   <a href="#ecolpap">Ecolpap 2</a>
+  <a href="#mainelec">Mainelec 1</a>
 </nav>
 
 <main>
@@ -168,6 +173,54 @@
         <div class="safety">⚠️ <strong>Consignes :</strong> une seule série de feuilles par cycle,
           attendre l'éjection avant d'en remettre. Trombones et agrafes interdits. En cas de bourrage,
           débloquer avec l'interrupteur en façade.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MAINELEC ============ -->
+  <section class="machine" id="mainelec">
+    <span class="tag green">SY77</span>
+    <h2>Mainelec 1</h2>
+    <p class="sub">Banc didactique Leroy-Somer : commande d'un moto-réducteur dans les deux sens de rotation</p>
+
+    <div class="grid">
+      <div class="gallery two">
+        <button data-full="img/mainelec-armoire.jpg"><img src="img/mainelec-armoire.jpg" alt="Coffret de commande Leroy-Somer du Mainelec 1" loading="lazy"></button>
+        <button data-full="img/mainelec-mecanique.jpg"><img src="img/mainelec-mecanique.jpg" alt="Partie mécanique du Mainelec 1 : moteur, réducteur et carter sur chariot mobile" loading="lazy"></button>
+      </div>
+
+      <div>
+        <h3>À quoi sert-il ?</h3>
+        <p>Le Mainelec est un banc de formation à la maintenance électrique. Il sert à câbler, régler
+          et dépanner la commande d'un moteur : marche, arrêt, inversion du sens de rotation, cycles.</p>
+
+        <h3>Fonctionnement</h3>
+        <ol class="steps">
+          <li><strong>Mise sous tension</strong> : le sectionneur « Professeur » cadenassable alimente le coffret.</li>
+          <li><strong>Choix du mode</strong> : le sélecteur permet de travailler en cycle par cycle ou en cycle continu.</li>
+          <li><strong>Rotation</strong> : le moteur entraîne la partie mécanique via un réducteur, en rotation avant puis arrière.</li>
+          <li><strong>Surveillance</strong> : en cas de défaut thermique du moteur, la machine s'arrête. Il faut réarmer pour repartir.</li>
+        </ol>
+
+        <h3>Caractéristiques</h3>
+        <table>
+          <tr><td>Fabricant</td><td>Leroy-Somer (Angoulême)</td></tr>
+          <tr><td>Repère</td><td>SY77 – Mainelec 1</td></tr>
+          <tr><td>Actionneur</td><td>Moteur électrique + réducteur</td></tr>
+          <tr><td>Modes</td><td>Cycle / cycle, cycle continu</td></tr>
+          <tr><td>Commandes</td><td>Marche, arrêt, réarmement, arrêt fin de cycle, essai lampes</td></tr>
+          <tr><td>Voyants</td><td>Rotation avant / arrière, défaut thermique moteur</td></tr>
+          <tr><td>Signalisation</td><td>Colonne lumineuse</td></tr>
+          <tr><td>Format</td><td>Banc mobile sur roulettes</td></tr>
+        </table>
+
+        <h3>Technologies présentes</h3>
+        <ul class="chips">
+          <li>Électrotechnique</li><li>Moteur asynchrone</li><li>Inversion de sens</li><li>Protection thermique</li><li>Logique de commande</li>
+        </ul>
+
+        <div class="safety">⚠️ <strong>Sécurité :</strong> sectionneur réservé au professeur et cadenassable,
+          arrêt d'urgence à clé en façade, coffret électrique fermé à clé.</div>
       </div>
     </div>
   </section>
